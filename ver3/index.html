@@ -25,6 +25,14 @@
   			margin-top: 100px;
   		}
 
+  		#menu {
+  			position: fixed;
+  			width: 100%;
+  			height: 100px;
+  			background-color: #fff;
+  			z-index: 4000;
+  		}
+
   		#log {
 	  		position: fixed;
 	  		right: 10px;
@@ -382,7 +390,22 @@
 						</div>
 					</li>
 					<li>
-						<a href="#">Historier</a>
+						<a href="#">Vinnerhistorier</a>
+						<div style="padding: 10px 0 10px 10px;">
+							<ul>
+								<li>
+									<a href="#">Siste</a>
+								</li>
+								<li>
+									<a href="#">Spill og vinnere</a>
+								</li>
+								<li>
+									<a href="#">Idrett</a>
+								</li>
+								<li>
+									<a href="#">Kultur</a>
+								</li>
+							</ul>
 					</li>
 					<li>
 						<a href="#">Aktuelt</a>
@@ -393,18 +416,19 @@
 		<div id="section1" class="section" style="height: 850px;">
 			<div class="section-wrapper">
 				<div class="main-window">
-					<div style="float: left;">
+					<div style="float: left; padding-top: 100px;">
 						<!-- <div class="money fx">
 							<div class="triangle-1"></div>
 							<div class="triangle-2"></div>
 							<div class="triangle-3"></div>
 						</div> -->
 						<div class="small_face fx">
-							<div class="triangle-1" style="left: -50px; top: -35px;"></div>
+
+							<!-- <div class="triangle-1" style="left: -50px; top: -35px;"></div>
 							<div class="triangle-2" style="left: 55px; top: 27px;"></div>
 							<div class="triangle-2" style="left: 160px; top: 87px;"></div>
 							<div class="triangle-3" style="left: 55px; top: -38px;"></div>
-							<div class="triangle-3 no-fade" style="left: 0; top: 88px;"></div>
+							<div class="triangle-3 no-fade" style="left: 0; top: 88px;"></div> -->
 							
 							<!-- <div class="triangle-1" style="left: 35px; top: -30px;"></div>
 							<div class="triangle-1" style="left: -5px; top: -5px;"></div>
@@ -412,16 +436,16 @@
 						</div>
 						<div class="triangles-text">This is text</div>
 					</div>
-					<div style="float: left; height: 200px; color: #444; text-align: center; margin-left: 5%; margin-top: 10%; z-index: 300;">
+					<div style="float: left; height: 200px; color: #444; text-align: center; margin-left: 5%; margin-top: 10%;">
 						<img src="img/title.png" alt="" />
 					</div>
-					<div style="float: right;">
+					<div style="float: right; padding-top: 140px;">
 						<div class="money fx">
-							<div class="triangle-1 no-fade" style="left: -50px; top: -35px;"></div>
+							<!-- <div class="triangle-1 no-fade" style="left: -50px; top: -35px;"></div>
 							<div class="triangle-2" style="left: 55px; top: 27px;"></div>
 							<div class="triangle-2" style="left: 60px; top: -47px;"></div>
 							<div class="triangle-3" style="left: 55px; top: -38px;"></div>
-							<div class="triangle-3" style="left: 0; top: 28px;"></div>
+							<div class="triangle-3" style="left: 0; top: 28px;"></div> -->
 							
 							<!-- <div class="triangle-1" style="left: 35px; top: -30px;"></div>
 							<div class="triangle-1" style="left: -5px; top: -5px;"></div>
@@ -535,8 +559,8 @@
 </div><!-- main wrapper -->
 <script src="js/jquery.min.js"></script>
 <script src="js/d3.v3.min.js"></script>
+<script src="js/jquery.nt.revealImg.js"></script>
 <script>
-
 $(document).ready(function() {
 	var l = $("#log");
 	function log(s, state) {
@@ -547,6 +571,10 @@ $(document).ready(function() {
 		}
 		
 	}
+
+	/* test revealImg plugin */
+	$(".small_face").revealImg("init");
+	$(".money").revealImg("init", {tiles: 4});
 
 	/* triangles test */
 
@@ -561,62 +589,62 @@ $(document).ready(function() {
 	//images.push(man, money);
 
 	//get all classes with fx
-	$(".fx").each(function(i, elm) {
-		var a = [];
-		$(this).children().each(function(j, el) {
-			a.push($(el).attr("class").split(' ')[0]);
-		});
-		imgArr.push({
-			'main': $(elm).attr("class").split(' ')[0],
-			'children': a
-		});
-	});
+	// $(".fx").each(function(i, elm) {
+	// 	var a = [];
+	// 	$(this).children().each(function(j, el) {
+	// 		a.push($(el).attr("class").split(' ')[0]);
+	// 	});
+	// 	imgArr.push({
+	// 		'main': $(elm).attr("class").split(' ')[0],
+	// 		'children': a
+	// 	});
+	// });
 
-	for (var i = 0; i < imgArr.length; i++) {
-		var img = $("."+imgArr[i].main);
-		img.css("opacity", .5);
-		img.on("mouseover", function(e) {
-			e.preventDefault();
-			$(this).stop().animate({
-				opacity: 1
-			}, 500, function() {
-				fadeChildren($(this), true);
-			});
-		});
-		img.on("mouseout", function(e) {
-			e.preventDefault();
-			$(this).stop().animate({
-				opacity: .5
-			}, 100, function() {
-				fadeChildren($(this), false);
-			});
-		});
-	}
+	// for (var i = 0; i < imgArr.length; i++) {
+	// 	var img = $("."+imgArr[i].main);
+	// 	img.css("opacity", .5);
+	// 	img.on("mouseover", function(e) {
+	// 		e.preventDefault();
+	// 		$(this).stop().animate({
+	// 			opacity: 1
+	// 		}, 500, function() {
+	// 			fadeChildren($(this), true);
+	// 		});
+	// 	});
+	// 	img.on("mouseout", function(e) {
+	// 		e.preventDefault();
+	// 		$(this).stop().animate({
+	// 			opacity: .5
+	// 		}, 100, function() {
+	// 			fadeChildren($(this), false);
+	// 		});
+	// 	});
+	// }
 
-	var animate = false;
-	function fadeChildren(elm, state) {
-		elm.children().each(function(i, el) {
-			if (state) {
+	// var animate = false;
+	// function fadeChildren(elm, state) {
+	// 	elm.children().each(function(i, el) {
+	// 		if (state) {
 				
 
-				var rand = randomNumber(1,9) * 400;
+	// 			var rand = randomNumber(1,9) * 400;
 				
-				// gotta make an array of elements to fade
-				if ($(this).hasClass('no-fade')) {
+	// 			// gotta make an array of elements to fade
+	// 			if ($(this).hasClass('no-fade')) {
 					
-				} else {
-					$(this).stop().animate({
-						opacity: 0
-					}, rand);
-				}
+	// 			} else {
+	// 				$(this).stop().animate({
+	// 					opacity: 0
+	// 				}, rand);
+	// 			}
 				
-			} else {
-				$(this).stop().animate({
-					opacity: 1
-				});
-			}
-		});
-	}
+	// 		} else {
+	// 			$(this).stop().animate({
+	// 				opacity: 1
+	// 			});
+	// 		}
+	// 	});
+	// }
 
 	// money.children().each(function(i, elm) {
 	// 	//log($(elm).attr("class"));
