@@ -24,13 +24,14 @@
 			var triangle_h = 127;
 
 			element.css("opacity", .5);
+			element.css("cursor", "pointer");
 
 			//background: url(img/triangles_1.png) 0 -129px no-repeat;
 			
 
 			for (var i = 0; i < defaultSetting.tiles; i++) {
-				var left = randomNr(-triangle_w, element.width())/2;
-				var top = randomNr(-triangle_h, element.height())/2;
+				var left = randomNr(-triangle_w, element.width());
+				var top = randomNr(-triangle_h, element.height());
 				var deg = 0;//randomNr(0, 360);
 				element.append('<div class="triangle-2" style="left: '+left+'px; top: '+top+'px; transform: rotate('+deg+'deg);"></div>');	
 			}

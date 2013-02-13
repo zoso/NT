@@ -29,9 +29,18 @@
   			position: fixed;
   			width: 100%;
   			height: 100px;
-  			background-color: #fff;
+  			
   			z-index: 4000;
   		}
+
+  		#menu .menu-bg {
+  			/*width: 100%;
+  			height: 100px;
+  			background-color: #fff;
+  			opacity: .5;*/
+  		}
+
+
 
   		#log {
 	  		position: fixed;
@@ -84,7 +93,7 @@
 		    line-height: 54px;
 		 
 		    font-family: Helvetica, Arial, sans-serif;
-		    font-weight: bold;
+		   
 		    font-size: 13px;
 		    color: #fcfcfc;
 		    text-shadow: 0 0 1px rgba(0,0,0,.35);
@@ -190,7 +199,7 @@
 
   		#menu a, a:active, a:visited {
   			text-decoration: none;
-  			font-weight: bold;
+  			
   			font-size: 14px;
   			color: #999;
 
@@ -334,83 +343,93 @@
 	<div id="bg-top" class="top-bg" style="height: 766px;">
 		<div id="nav">
 			<div id="menu" style="color: black; padding: 10px;">
-				<p style="float: left;"><img src="img/Norsk_Tipping_logo_small.png" alt="" /></p>
-				<!-- <a href="#">Årsrapport 2012</a> - <a href="#">Aktuelt</a> - <a href="#">Vinnere</a> -->
-				<ul class="nav">
-					<li>
-						<a href="#">Årsrapport 2012</a>
-						<div style="padding: 10px 0 10px 10px;">
-							<ul>
-								<li>
-									<a href="#">Om oss</a>
-								</li>
-								<li>
-									<a href="#">Hovedtall</a>
-								</li>
-								<li>
-									<a href="#">Administrerende direktør</a>
-								</li>
-								<li>
-									<a href="#">Høydepunkter 2012</a>
-								</li>
-								<li>
-									<a href="#">Mål og måloppnåelse</a>
-								</li>
-								<li>
-									<a href="#">Våre spill</a>
-								</li>
-								<li>
-									<a href="#">Samfunnsbidraget</a>
-								</li>
-								<li>
-									<a href="#">Spillmarkedet</a>
-								</li>
-								<li>
-									<a href="#">Samfunnsansvar</a>
-								</li>
-								<li>
-									<a href="#">Spillansvarlighet</a>
-								</li>
-								<li>
-									<a href="#">Eierstyring og seleskapsledelse</a>
-								</li>
-								<li>
-									<a href="#">Statistikk</a>
-								</li>
-								<li>
-									<a href="#">Styrets beretning</a>
-								</li>
-								<li>
-									<a href="#">Årsregnskap</a>
-								</li>
-								<li>
-									<a href="#">Gri og revisjon</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="#">Vinnerhistorier</a>
-						<div style="padding: 10px 0 10px 10px;">
-							<ul>
-								<li>
-									<a href="#">Siste</a>
-								</li>
-								<li>
-									<a href="#">Spill og vinnere</a>
-								</li>
-								<li>
-									<a href="#">Idrett</a>
-								</li>
-								<li>
-									<a href="#">Kultur</a>
-								</li>
-							</ul>
-					</li>
-					<li>
-						<a href="#">Aktuelt</a>
-					</li>
-				</ul>
+				<div style="width: 1024px; margin: 0 auto;">
+					<p style="float: left;"><img src="img/Norsk_Tipping_logo_small.png" alt="" /></p>
+					<!-- <a href="#">Årsrapport 2012</a> - <a href="#">Aktuelt</a> - <a href="#">Vinnere</a> -->
+					<ul class="nav">
+						<li>
+							<a href="#">Forside</a>
+						</li>
+						<li>
+							<a href="#">Årsrapport 2012</a>
+							<div style="padding: 10px 0 10px 10px;">
+								<ul>
+									<li>
+										<a href="#">Om oss</a>
+									</li>
+									<li>
+										<a href="#">Hovedtall</a>
+									</li>
+									<li>
+										<a href="#">Administrerende direktør</a>
+									</li>
+									<li>
+										<a href="#">Høydepunkter 2012</a>
+									</li>
+									<li>
+										<a href="#">Mål og måloppnåelse</a>
+									</li>
+									<li>
+										<a href="#">Våre spill</a>
+									</li>
+									<li>
+										<a href="#">Samfunnsbidraget</a>
+									</li>
+									<li>
+										<a href="#">Spillmarkedet</a>
+									</li>
+									<li>
+										<a href="#">Samfunnsansvar</a>
+									</li>
+									<li>
+										<a href="#">Spillansvarlighet</a>
+									</li>
+									<li>
+										<a href="#">Eierstyring og seleskapsledelse</a>
+									</li>
+									<li>
+										<a href="#">Statistikk</a>
+									</li>
+									<li>
+										<a href="#">Styrets beretning</a>
+									</li>
+									<li>
+										<a href="#">Årsregnskap</a>
+									</li>
+									<li>
+										<a href="#">Gri og revisjon</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">Vinnerhistorier</a>
+							<div style="padding: 10px 0 10px 10px;">
+								<ul>
+									<li>
+										<a href="#">Siste</a>
+									</li>
+									<li>
+										<a href="#">Spill og vinnere</a>
+									</li>
+									<li>
+										<a href="#">Idrett</a>
+									</li>
+									<li>
+										<a href="#">Kultur</a>
+									</li>
+								</ul>
+						</li>
+						<li>
+							<a href="#">Aktuelt</a>
+						</li>
+						<li>
+							<a href="#">Ansvarlighet</a>
+						</li>
+
+					</ul>
+					<div class="menu-bg"></div>
+				</div>
 			</div>
 		</div>
 		<div id="section1" class="section" style="height: 850px;">
