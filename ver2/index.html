@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  	html, body {
+  		margin: 0;
+  		padding: 0;
+  		height: 100%;
+      /*border: 10px solid #fff;*/
+      background-color: #082c4e;
+  	}
+  		
+  	.section2 {
+  		position: relative;
+  		width: 100%;
+  		height:auto !important; /* real browsers */
+		  height:100%; /* IE6: treaded as min-height*/
+		  min-height:100%; /* real browsers */
+		  color: #fff;
+      border-bottom: 2px solid #fff;
+  	}
+
+    .section {
+      height: 1600px; 
+      padding: 0; 
+      margin: 0; 
+      width: 100%; 
+      max-width: 1920px; 
+      position: relative;
+      background-color: #FFEEEE;
+      margin: 0 auto; 
+      /*border-top: 1px solid rgba(255,255,255,0.3); */
+      /*border-bottom: 1px solid rgba(0,0,0,0.4); 
+      box-shadow: 0 0 5px rgba(0,0,0,0.8);*/
+    }
+
+  	#nav {
+      position: fixed; 
+  		width: 100%;
+      max-width: 1920px; 
+  		height: 60px;
+  		/*background-color: #fff;*/
+  		z-index: 2000;
+  		margin: 0 auto;
+     /* border-bottom: 1px solid rgba(0,0,0,0.4); 
+      box-shadow: 0 0 5px rgba(0,0,0,0.8);
+      opacity:0.7;*/
+  	}
+
+    #nav .header {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+  	#front {
+  		/*margin-top: 50px;*/
+  		/*background-color: #f3f3f3;*/
+     	 /*background: url(img/nt_img_1.jpg) 50% 0 no-repeat fixed; */
+  	}
+
+    #front #textTest {
+      position: absolute;
+      font-family: Helvetica;
+      font-size: 30px;
+      text-transform: uppercase;
+      top: 140px;
+      left: 30px;
+    }
+
+    #front #picTest {
+      position: absolute;
+      background: url(img/text.png) no-repeat;
+      width: 200px;
+      height: 200px;
+      right: 230px;
+      top: 300px;
+    }
+
+  	#page2 {
+  		/*background-color: #0b6e6e;*/
+      /*height: 3000px;*/
+      /*background: url(img/nt_img_1_1.jpg) 50% 0 no-repeat fixed;*/
+  	}
+
+  	#page3 {
+  		/*background-color: #9d9d9d;*/
+      /*background: url(img/nt_img_3.jpg) 50% 0 no-repeat fixed;*/
+  	}
+
+    #page3 #textContainer {
+      font-family: Impact;
+      font-size: 40px;
+      position: absolute;
+      top: 300px;
+      left: 400px;
+      color: #fff;
+    }
+
+  	#page4 {
+  		/*background-color: #44eeff;*/
+      /*background: url(img/nt_img_4.jpg) 50% 0 no-repeat fixed;*/
+  	}
+
+    #page4 #page4Container {
+      position: absolute;
+      width: 90%;
+
+    }
+
+  	#page5 {
+  		/*background-color: #11eeff;*/
+      /*background: url(img/nt_img_5.jpg) 50% 0 no-repeat fixed;*/
+  	}
+
+    #page5 #page5Container {
+        position: absolute;
+        left: 400px;
+        top: 300px;
+        width: 400px;
+        height: 300px;
+    }
+
+    #nav ul {
+      display: inline-block;
+      /*border: 1px solid #333;*/
+      margin-left: -25px;
+    }
+
+  	#nav li {
+  		float: left;
+  		margin-right: 20px;
+  		list-style: none;
+      font-family: Impact;
+      font-size: 16px;
+     
+      text-transform: uppercase;
+  	}
+
+  	#nav li a, a:active, li:visited {
+  		text-decoration: none;
+       color: #222;
+  	}
+
+    #nav li a:hover {
+      color: #222;
+    }
+
+
+  	#log {
+  		position: fixed;
+  		right: 10px;
+  		top: 10px;
+  		width: 200px;
+  		background-color: #fff;
+  		z-index: 9999;
+      font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+      font-size: 10px;
+  	}
+
+    #pos {
+      position: fixed;
+      right: 10px;
+      top: 30px;
+      width: 200px;
+      background-color: #fff;
+      z-index: 10000;
+      font-family: Verdana;
+      font-size: 10px;
+    }
+
+    .inview {
+      
+    }
+  </style>  
+  <link rel="stylesheet" type="text/css" href="css/jquery.pageslide.css" />
+</head>
+<body>
+<div id="log"></div>
+<div id="pos"></div>
+
+<div id="nav">
+  <div class="header">
+    <img src="img/Norsk_Tipping_logo_top.png" alt="NT" width="346" height="40" style="margin-left: 10px; margin-top: 10px;" />
+  	<ul>
+  		<li><a href="#" data-link="front">front</a></li>
+  		<li><a href="#" data-link="page2">page 2</a></li>
+  		<li><a href="#" data-link="page3">page 3</a></li>
+  		<li><a href="#" data-link="page4">page 4</a></li>
+  		<li><a href="#" data-link="page5">page 5</a></li>
+      <li><a href="#" data-link="" class="open-left">Årsrapport 2012</a></li>
+  	</ul>
+  </div>
+</div>
+<section id="front" data-speed="2" class="section">
+  <div id="textTest">
+      <p>Grasrotandelen!</p>
+  </div>
+  <div id="picTest"></div>
+</section>
+<section id="page2" data-speed="4" class="section">
+	page 2
+  <div id="testPage" style="position: absolute; top: 5%; left: 5%; width: 90%; background-color: #445522; color: #fff; font-family: verdana; font-size: 14px; margin: 0 auto;">
+    bla doj ih vaijrpij 
+    <p>bla doj ih vaijrpij </p>
+  </div>
+	<div id="testPage" style="position: absolute; top: 50%; left: 5%; width: 90%; background-color: #445522; color: #fff; font-family: verdana; font-size: 14px; margin: 0 auto;">
+		The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+		<div id="">
+			The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+		</div>
+		<div id="">
+			The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+		</div>
+		
+	</div>
+	
+</section>
+<section id="page3" data-speed="3" class="section">
+	page 3
+  <div id="textContainer">
+    Noen vinner alltid!
+  </div>
+  <section class="subsection">
+  		subsection 1
+  </section>
+  <section class="subsection">
+  		subsection 200px
+  </section>
+</section>
+<section id="page4" data-speed="7" class="section">
+	page 4
+  <div id="page4Container">
+    <div>noe her</div>
+    <div>og her</div>
+  </div>
+</section>
+<section id="page5" data-speed="5" class="section">
+	
+</section>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.pageslide.js"></script>
+<script src="js/jquery.backstretch.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/nbw-parallax.js"></script>
+<script>
+
+$(document).ready(function() {
+	  var l = $("#log");
+	  var testpage = $("#testPage");
+    var page2 = $("#page2");
+
+
+
+	  // $("#front").backstretch("img/nt_img_1.jpg");
+	  // $("#page2").backstretch("img/nt_img_2.jpg");
+
+	  $("#nav").waypoint(function() {
+	    //$(this).css("position", "fixed");
+	  })
+
+	  $(".open-left").pageslide({ direction: "right", modal: false, href: "pages/page1.html" });
+		$("li a").on("click", function(e) {
+			e.preventDefault();
+	    if ($(this).data("link")) {
+	      slide("#"+$(this).data("link").toString());
+	    } else {
+	      log("----");
+	    }
+		})
+
+
+	  
+
+
+		function slide(dest, callback) {
+				
+			if ($(dest).offset().top == null || dest == "") {
+
+			} else {
+				var destV = $(dest).offset().top - 60;
+				var easing = 'easeOutSine';
+				$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destV}, {duration: 1100, easing:easing, complete:callback});	
+			}
+		}
+
+		$(window).scroll(function() {
+
+		});
+
+		
+		function log(s) {
+			l.append("> "+s+"<br>");
+		}
+})
+
+
+</script>
+</body>
+</html>

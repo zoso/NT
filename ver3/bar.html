@@ -1,0 +1,32 @@
+<html lang="en">
+
+	<head>
+		<script src="https://www.google.com/jsapi"></script>
+		<script>
+			google.load("visualization", "1", {packages: ["corechart"]});
+			google.setOnLoadCallback(drawChart);
+			function drawChart() {
+				var data = google.visualization.arrayToDataTable([
+							['Penger', 'Pr spill'],
+							['Lotto', 111000],
+							['VikingLotto', 90000],
+							['Tipping', 85022],
+							['Keno', 39919],
+							['Flax', 33991],
+							['Andre', 20002]
+						]);
+
+				var options = {
+					title: "Penger pr spill 2012"
+				};
+
+				var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+				chart.draw(data, options);
+
+			}
+		</script>
+	</head>
+	<body>
+		<div id="chart_div" style="width: 900px; height: 500px;"></div>
+	</body>
+</html>
