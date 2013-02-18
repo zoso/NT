@@ -28,94 +28,36 @@ a {
 }
 
 /* top nav */
-.container {
-	width: 100%;
-	/*max-width: 900px;*/
-	z-index: 1000;
-}
-
-.toggleMenu {
-	display: none;
-	background-color: #666;
-	padding: 10px 15px;
-	color: #fff;
-}
 
 .nav {
-	width: 90%;
-	max-width: 900px;
-	margin: 0 auto;
+	font-size: 12px;
 	list-style: none;
-	*zoom: 1;
-	background-color: #ececec;
-	position: relative;
-}
-
-.nav:before,
-.nav:after {
-	content: " ";
-	display: table;
-}
-
-.nav:after {
-	clear: both;
-}
-
-.nav ul {
-	list-style: none;
-	/*width: 9em;*/
-
-}
-
-.nav a {
-	padding: 10px;
-	color: #333;
-	*zoom: 1;
-	border: 1px solid #222;
-}
-
-.nav > li {
-
-	float: left;
-	/*border-top: 1px solid #104336;*/
+	
 }
 
 .nav li {
-	position: relative;
+	float: left;
+	margin-right: 10px;
 }
 
-.nav > li.hover > ul {
-	left: 0;
+.nav li:last-child {
+	margin-right: 0;
+	
 }
 
-.nav li li.hover ul {
-	left: 100%;
-	top: 0;
+.nav li a {
+	text-decoration: none;
+	content: "> ";
+	color: #111;
 }
 
-.nav > li > a {
-	display: block;
+.nav li a:hover {
+	color: #ff3300;
+	
 }
 
-.nav li ul {
-	position: absolute;
-	left: -9999px;
-	z-index: 200;
-}
 
-.nav li li a {
-	display: block;
-	/*background-color: #1d7a62;*/
-	position: relative;
-	z-index: 100;
-	border-top: 1px solid #175e4c;
-}
 
-.nav li li li a {
-	/*background-color: #249578;*/
-	z-index: 200;
-	border-top: 1px solid #1d7a62;
-}
 
 /* end top-nav */
 
@@ -131,9 +73,14 @@ a {
 	border-top: 2px solid #ecf7fb;
 }
 
+.nt-logo {
+	width: 137px;
+	height: 29px;
+	background: url(../img/nt-logo.jpg) no-repeat;
+}
+
 /* sections */
 #top {
-	
 	min-height: 700px;
 	height: 700px;
 	background: url(../img/bg-top.jpg) 50% 0 no-repeat fixed;
