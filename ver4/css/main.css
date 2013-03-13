@@ -79,11 +79,13 @@ a {
 	background: url(../img/nt-logo.jpg) no-repeat;
 }
 
+
+
 /* sections */
 #top {
-	min-height: 700px;
-	height: 700px;
-	background: url(../img/bg-top.jpg) 50% 0 no-repeat fixed;
+	min-height: 450px;
+	height: 450px;
+	background: url(../img/bg-top.jpg) 50% 0 no-repeat;
 }
 
 #stats {

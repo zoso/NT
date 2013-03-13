@@ -16,6 +16,18 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css?v=2">
         <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
+
+        <style>
+            .movie-box {
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                background: url(img/round.png) no-repeat;
+                opacity: .6;
+                cursor: pointer;
+            }
+        </style>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -58,9 +70,9 @@
                     </div>
                 </div>
             </div>
-            <div class="section" id="top">
+            <div class="section" id="top" style="">
                 <div class="section-wrapper" style="padding-top: 60px;">
-                    top
+                    
                 </div>
             </div>
             <div class="section" id="stats">
@@ -117,6 +129,7 @@
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/raphael-min.js"></script>
         <script>
         $(document).ready(function() {
             $(".toggleMenu").css("display", "none");
@@ -124,7 +137,87 @@
                 $(this).addClass("hover");
             }, function() {
                 $(this).removeClass("hover");
+            });
+
+            function randomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            //var test = Raphael(100, 100, 450, 940);
+            // for (var i = 0; i < 10; i++) {
+            //     test.circle(50, 50, 10*i)
+            //         .attr({fill: "#334455"})
+            //         .data("i", i)
+            //         .click(function(e) {
+            //             //alert("> "+this.data("i"));
+            //         });
+            // }
+            var elmArr = [
+                {
+                    id: 1,
+                    left: "930px",
+                    top: "190px",
+                    url: "",
+                    img: ''
+                },
+                {
+                    id: 2,
+                    left: "0",
+                    top: "103px",
+                    url: "",
+                    img: 'round_dog.png'
+                },
+                {
+                    id: 3,
+                    left: "430px",
+                    top: "10px",
+                    url: "",
+                    img: ''
+                },
+                {
+                    id: 4,
+                    left: "430px",
+                    top: "80px",
+                    url: "",
+                    img: ''
+                },
+                {
+                    id: 5,
+                    left: "690px",
+                    top: "110px",
+                    url: "",
+                    img: 'round_water.png'
+                }
+            ];
+            var $top = $("#top .section-wrapper");
+            for (var j = 0; j < elmArr.length; j++) {
+                var str = '<div class="movie-box" ';
+                    str += 'style="top: '+elmArr[j].top+';';
+                    
+                    if (elmArr[j].img != '') {
+                        str += 'background: url(img/'+elmArr[j].img+') no-repeat;';
+                    }
+                       
+                    str += 'left: '+elmArr[j].left+';"';
+                    str += '></div>';
+                    console.log(str);
+
+                $top.append(str);
+            }
+
+            $(".movie-box").on("mouseenter", function(e) {
+                e.preventDefault();
+                $(this).animate({
+                    opacity: .9
+                })
+            }).on("mouseleave", function(e) {
+                $(this).animate({
+                    opacity: .5
+                })
+            }).on("click", function(e) {
+
             })
+
         });
         </script>
         <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
