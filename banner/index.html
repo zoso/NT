@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Norsk Tipping - banner</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -23,38 +23,87 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div id="backgroundContainer">&nbsp;</div>
+        <div id="backgroundContainer">
+             <?xml version="1.0"?>
+                <svg width="100%" height="450" viewPort="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <circle id="circle1" cx="160" cy="160" r="50" style="fill: white;" fill-opacity="0.5">
+                        
+                    </circle>
+                    <circle id="circle11" cx="760" cy="260" r="75" style="fill: white;" fill-opacity="0.2">
+                        
+                    </circle>
+                    <circle id="circle13" cx="620" cy="200" r="105" style="fill: white;" fill-opacity="0.3">
+                        
+                    </circle>
+                    <circle id="circle13" cx="1100" cy="400" r="135" style="fill: white;" fill-opacity="0.3">
+                        
+                    </circle>
+                    <circle id="circle2" cx="360" cy="360" r="160" style="fill: white;" fill-opacity="0.1">
+                        
+                    </circle>
+                    <circle id="circle3" cx="400" cy="160" r="260" style="fill: white;" fill-opacity="0.2">
+                        <!-- <animate attributeName="fill-opacity" from="0" to="0.5" dur="2s" /> -->
+                    </circle>
+                    <circle id="circle4" cx="930" cy="26" r="100" style="fill: white;" fill-opacity="0.4">
+                        <!-- <animate attributeName="r" from="0" to="130" dur="3s" /> -->
+                    </circle>
+                    <circle id="circle5" cx="130" cy="326" r="160" style="fill: white;" fill-opacity="0.4">
+                        <!-- <animate attributeName="r" from="0" to="160" dur="2s" /> -->
+                    </circle>
+                    <circle id="circle6" cx="1130" cy="206" r="300" style="fill: white;" fill-opacity="0.4">
+                        <!-- <animate attributeName="r" from="0" to="300" dur="1s" /> -->
+                    </circle>
+                </svg>
+        </div>
         <div id="wrapper">
-            <div id="bannerContainer">
-                <div class="menuItem banner-top-left">
+            <div style="z-index: 99; position: relative"><img src="img/top.jpg" /></div>
+            <div id="bannerContainer" style="z-index: 40; position: relative;">
+                <!-- <div class="menuItem banner-top-left">
                     <div class="menuItem-over">
+                        <div class="img"><img src="img/odds_round_img.png" /></div>
                         <div class="play-btn"></div>
                         <div class="play-txt">txt 1</div>
                     </div>
                 </div>
                 <div class="menuItem banner-top-right">
                     <div class="menuItem-over">
+                        <div class="img"><img src="img/hadjik_round_img.png" /></div>
                         <div class="play-btn"></div>
                         <div class="play-txt">txt 2</div>
                     </div>
                 </div>
                 <div class="menuItem banner-bottom-left">
                     <div class="menuItem-over">
+                        <div class="img"><img src="img/gull_round_img.png" /></div>
                         <div class="play-btn"></div>
                         <div class="play-txt">txt 3</div>
                     </div>
                 </div>
                 <div class="menuItem banner-bottom-right">
                     <div class="menuItem-over">
+                        <div class="img"><img src="img/familie_round_img.png" /></div>
                         <div class="play-btn"></div>
                         <div class="play-txt">txt 4</div>
                     </div>
                 </div>
+                <div class="menuItem banner-top-center">
+                    <div class="menuItem-over">
+                        <div class="img"><img src="img/danser_round_img.png" /></div>
+                        <div class="play-btn"></div>
+                        <div class="play-txt">txt 5</div>
+                    </div>
+                </div> -->
+               
+               <div style="position: absolute; top: 130px; width: 422px; height: 142px; z-index: 200;">
+                   <img src="img/det_er_alltid.png" />
+               </div>
             </div>
+            <div style="z-index: 100; position: relative"><img src="img/stats.jpg" /></div>
         </div>
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/jquery.nt.stardust.js"></script>
         <script src="js/jquery.nt.banner.js"></script>
         <!-- <script src="js/main.js"></script> -->
 

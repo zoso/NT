@@ -1,12 +1,15 @@
 body{margin:0;padding:0;}
 #wrapper{width:1024px;margin:0 auto;}
-#backgroundContainer{position:absolute;width:100%;background:url(../img/banner_bg.jpg) 50% 0 no-repeat;height:450px;z-index:1;}
-#bannerContainer{position:absolute;width:940px;height:450px;position:relative;margin-left:42px;z-index:2;}
-.menuItem{width:270px;height:270px;position:absolute;cursor:pointer;opacity:0.3;background:url(../img/white_round_bg.png) 0 0 no-repeat;}
-.menuItem-over{}
-.play-txt{width:150px;}
-.play-btn{background:url(../img/play_btn.png) 0 0 no-repeat;width:100px;height:100px;opacity:0;}
-.bannner-top-left{left:10px;top:10px;}
-.banner-top-right{top:10px;right:10px;}
-.banner-bottom-left{bottom:10px;left:20px;}
-.banner-bottom-right{bottom:-30px;right:-40px;}
+#backgroundContainer{margin-top:116px;position:absolute;width:100%;min-width:1224px;background:url(../img/banner_bg.jpg) 50% 0 no-repeat;height:450px;z-index:1;}
+#bannerContainer{position:absolute;width:940px;height:450px;margin-left:42px;z-index:2;}
+.menuItem{width:270px;height:270px;position:absolute;opacity:0.3;background:url(../img/white_round_bg.png) 0 0 no-repeat;}
+.menuItem-over{opacity:0.3;}.menuItem-over .img{margin-top:3px;margin-left:3px;}
+.menuItem-btn{position:absolute;width:200px;height:100px;z-index:1000;}
+.play-btn{position:absolute;width:100px;height:100px;background:url(../img/play_btn.png) 0 0 no-repeat;}
+.play-txt{font-size:14px;position:absolute;left:-205px;top:30px;text-align:right;width:200px;color:#fff;font-family:"Verdana";}
+.play-txt a:visited,.play-txt a:active,.play-txt a{color:#fff;text-decoration:none;}
+.play-txt a:hover{color:#048fd4;}
+.star_small{width:78px;height:67px;position:absolute;background:url(../img/stars/star_small.png) no-repeat;}
+.star_small2{width:38px;height:38px;position:absolute;background:url(../img/stars/star_small2.png) no-repeat;}
+.star_small3{width:24px;height:22px;position:absolute;background:url(../img/stars/star_small3.png) no-repeat;}
+.star_small4{width:399px;height:270px;position:absolute;background:url(../img/stars/star_small4.png) no-repeat;}
