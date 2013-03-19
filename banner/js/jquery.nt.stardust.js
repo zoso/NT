@@ -5,22 +5,50 @@
         console.log(".......");
     }
 
-    var classArr = ["star_small", "star_small2, star_small3"];
+    var classArr = ["star_small", "star_small2", "star_small3"];
+    
     function getClass() {
-        return classArr[randomNr(0,classArr.length)];
+        var r = randomNr(0,classArr.length-1);
+        console.log("RRR "+r);
+        return classArr[r];
     } 
 
+    var starArr = [];
     function addStars(el) {
-        var ant = randomNr(20, 40);
-        
-        var str = '<div class="starsContainer" style="position: absolute; top: 0; left: 0;">';
+        var ant = randomNr(1, 8);
+        starArr = [];
+        var str = '<div class="starsContainer">';
         for (var i = 0; i < ant; i++) {
-            str += '<div class="'+getClass()+'" style="left: '+randomNr(0, 270)+'px; top: '+randomNr(-100, 270)+'px;">&nbsp;</div>';
+            var l = randomNr(-20, 270);
+            var t = randomNr(-20, 270);
+            var c = getClass();
+            starArr.push({left: l, top: t, star: c});
+            //str += '<div class="'+getClass()+'" style="left: '+l+'px; top: '+l+'px;">&nbsp;</div>';
+            str += '<div class="'+c+'">&nbsp;</div>';
         }
         str += '<div class="star_small4" style="left: -150px; top: 50px;"></div>';
         str += '</div>';
         //console.log("addStars "+ant+" > "+str);
         el.append(str);
+        doSomeAni();
+    }
+
+    function doSomeAni() {
+        console.log("doSomeAni -> "+starArr.length);
+        var s = element.find(".starsContainer");
+        
+        for (var i = 0; i < starArr.length; i++) {
+            var c = starArr[i].star;
+            
+            s.each(function() {
+                console.log("-----> "+c);
+                $(this).find(c).animate({
+                    left: starArr[i].left+"px;",
+                    top: starArr[i].top+"px;"
+                }, 400);//("left", starArr[i].left+"px;");
+                //$(this).find(c).css("top", starArr[i].top+"px;")
+            });
+        }
     }
 
     function removeStars(el) {
@@ -39,6 +67,7 @@
     //init
     var element;
     var speed = 2000;
+    var ok = true;
     $.fn.stardust = function(settings) {
         defaultSettings = $.extend({}, defaultSettings, settings || {});
         element = this;
@@ -46,11 +75,11 @@
             function() {
                 //console.log("over ");
                 //render();
-                addStars($(this));
+                addStars($(this));    
             }, 
             function() {
                 //console.log("out");
-                removeStars($(this));
+                //removeStars($(this));
             }
         );
     }

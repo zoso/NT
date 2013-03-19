@@ -16,6 +16,27 @@
         <link rel="stylesheet" href="css/style_banner.css">
         <!-- <link rel="stylesheet" href="css/main.css"> -->
         <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
+        <style>
+            .block {
+                text-align: center;
+                background: #999;
+                
+            }
+            .block:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                
+            }
+            .centered {
+                display: inline-block;
+                vertical-align: middle;
+                width: 99%;
+                
+                
+            }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -26,7 +47,7 @@
         <div id="backgroundContainer">
              <?xml version="1.0"?>
                 <svg width="100%" height="450" viewPort="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <circle id="circle1" cx="160" cy="160" r="50" style="fill: white;" fill-opacity="0.5">
+                    <circle id="circle1" cx="0" cy="400" r="50" style="fill: white;" fill-opacity="0.5">
                         
                     </circle>
                     <circle id="circle11" cx="760" cy="260" r="75" style="fill: white;" fill-opacity="0.2">
@@ -57,6 +78,9 @@
         </div>
         <div id="wrapper">
             <div style="z-index: 99; position: relative"><img src="img/top.jpg" /></div>
+            <div id="gfxContainer">
+                
+            </div>
             <div id="bannerContainer" style="z-index: 40; position: relative;">
                 <!-- <div class="menuItem banner-top-left">
                     <div class="menuItem-over">
@@ -100,9 +124,46 @@
             </div>
             <div style="z-index: 100; position: relative"><img src="img/stats.jpg" /></div>
         </div>
+        <!-- <h1>test</h1>
+        <div class="block" style="height: 450px">
+            <div class="centered">
+                <?xml version="1.0"?>
+                <svg width="940" height="450" viewPort="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <circle id="circle1" cx="0" cy="400" r="50" style="fill: white;" fill-opacity="0.5">
+                        
+                    </circle>
+                    <circle id="circle11" cx="760" cy="260" r="75" style="fill: white;" fill-opacity="0.2">
+                        
+                    </circle>
+                    <circle id="circle13" cx="620" cy="200" r="105" style="fill: white;" fill-opacity="0.3">
+                        
+                    </circle>
+                    <circle id="circle13" cx="1100" cy="400" r="135" style="fill: white;" fill-opacity="0.3">
+                        
+                    </circle>
+                    <circle id="circle2" cx="360" cy="360" r="160" style="fill: white;" fill-opacity="0.1">
+                        
+                    </circle>
+                    <circle id="circle3" cx="400" cy="160" r="260" style="fill: white;" fill-opacity="0.2">
+                       
+                    </circle>
+                    <circle id="circle4" cx="930" cy="26" r="100" style="fill: white;" fill-opacity="0.4">
+                       
+                    </circle>
+                    <circle id="circle5" cx="130" cy="326" r="160" style="fill: white;" fill-opacity="0.4">
+                       
+                    </circle>
+                    <circle id="circle6" cx="1130" cy="206" r="300" style="fill: white;" fill-opacity="0.4">
+                       
+                    </circle>
+                </svg>
+            </div>
+        </div> -->
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script type="text/javascript" src="//use.typekit.net/abh7pmi.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <script src="js/jquery.nt.stardust.js"></script>
         <script src="js/jquery.nt.banner.js"></script>
         <!-- <script src="js/main.js"></script> -->

@@ -25,10 +25,6 @@
 
 $(document).ready(function() {
 	/*
-	
-	*/
-
-	/*
 	function drawIntro(svg) { 
 	    svg.circle(75, 75, 50, 
 	        {fill: 'none', stroke: 'red', strokeWidth: 3}); 
@@ -39,14 +35,19 @@ $(document).ready(function() {
 
 	$('#svgintro').svg({onLoad: drawIntro});*/
 	//$('#svgintro').svg('destroy');
-		
+	
+	$(".centered").find("svg").css("width", $(window).width()+"px");
+	$(window).resize(function() {
+		//$(".centered").find("svg").css("width", $(this).width());
+		//console.log("> resize "+$(this).width()+"px");
+	})
 
 	var menuArr = [
 		{
 			img: "img/danser_round_img.png",
 			height: 263,
 			width: 263,
-			pos: [-30,730],
+			pos: [-30,730, 50, -50],
 			url: "#danser",
 			txt: "Magedanserinnen"
 		},
@@ -55,7 +56,7 @@ $(document).ready(function() {
 			height: 263,
 			width: 263,
 			url: "#familie",
-			pos: [170, 600],
+			pos: [170, 600, 50, -50],
 			txt: "Lottofamilien"
 		},
 		{
@@ -63,7 +64,7 @@ $(document).ready(function() {
 			height: 263,
 			width: 263,
 			url: "#odds",
-			pos: [-50, 400],
+			pos: [-50, 400, 100, 200],
 			txt: "Årets ildsjel"
 		},
 		{
@@ -71,7 +72,7 @@ $(document).ready(function() {
 			height: 263,
 			width: 263,
 			url: "#gull",
-			pos: [260,0],
+			pos: [260,0, 50, 200],
 			txt: "Årets kommisjonær"
 		},
 		{
@@ -79,28 +80,20 @@ $(document).ready(function() {
 			height: 263,
 			width: 263,
 			url: "#Hadjik",
-			pos: [250, 330],
+			pos: [250, 330, 50, -50],
 			txt: "Selveste ski-filmen"
 		}
 	];
-
-	/*
-		<div class="menuItem banner-top-center">
-            <div class="menuItem-over">
-                <div class="img"><img src="img/danser_round_img.png" /></div>
-                <div class="play-btn"></div>
-                <div class="play-txt">txt 5</div>
-            </div>
-        </div>
-	*/
 
 	//test
 	var speed1 = 200;
 	var speed2 = 1000;
 	var playPtn = (263-100)/2;
+	
 	var randomNr = function(min, max) {
         return Math.floor(Math.random() * (max - (min) + 1)) + (min);
     }
+
 	function getPlayBtnPos() {
 		var arr = [randomNr(0, 100), randomNr(0, 100)];
 		return arr;
@@ -108,12 +101,23 @@ $(document).ready(function() {
 
 	var bc = $("#bannerContainer");
 	for (var i = 0; i < menuArr.length; i++) {
+		var l = menuArr[i].pos[1];
+		var t = menuArr[i].pos[0];
+		var c = "play-txt-left";
+		if (l < 200) {
+			//btnLeft = 300;
+			var c = "play-txt-right";
+		}
+
+		if (t < 50) {
+			btnTop = 100;
+		}
 		var str = '<a href="#" data-url="'+menuArr[i].url+'"><div class="menuItem" style="top: '+menuArr[i].pos[0]+'px; left: '+menuArr[i].pos[1]+'px;">';
 			str += '<div class="menuItem-over">';
 			str += '<div class="img"><img src="'+menuArr[i].img+'" /></div>';
-			str += '<div class="menuItem-btn" style="top: '+getPlayBtnPos()[0]+'px; left: '+getPlayBtnPos()[1]+'px;">';
+			str += '<div class="menuItem-btn" data-nr="'+i+'" style="top: '+playPtn+'px; left: '+playPtn+'px;">';
 			str += '<div class="play-btn">&nbsp;</div>';
-			str += '<div class="play-txt">'+menuArr[i].txt+'<br>Se film</div>';
+			str += '<div class="play-txt '+c+'">'+menuArr[i].txt+'<br>Se film</div>';
 			str += '</div></div></div></a>';
 		bc.append(str);
 	}
@@ -126,7 +130,7 @@ $(document).ready(function() {
 
 	$(".menuItem-over").stardust();
 	$(".menuItem-btn").css("opacity", 0);
-	//$(".play-txt").css("opacity", 0);
+
 	$(".menuItem").hover(
 		function() {
 			$(this).stop().animate({
@@ -135,9 +139,14 @@ $(document).ready(function() {
 				$(this).find(".menuItem-over").stop().animate({
 					opacity: 1
 				}, function() {
+					var nr = $(this).find(".menuItem-btn").data("nr");
+					var t = menuArr[nr].pos[2];
+					var l = menuArr[nr].pos[3];
+					//console.log("left: "+l+" > top: "+t + " > nr > "+nr);
 					$(this).find(".menuItem-btn").stop().animate({
 						opacity: 1,
-						left: "-50px"
+						left: l,
+						top: t
 					}, speed1)/*
 					$(this).find(".play-txt").stop().animate({
 						opacity: 1,
