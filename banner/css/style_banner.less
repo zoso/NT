@@ -6,10 +6,21 @@
 
 @canvas-width: 940px;
 @light-blue: #048fd4;
+@din-font: "ff-din-web",sans-serif;
+
+@spriteGrid: 50px;
+.sprite(@x, @y) {
+   background: url(../img/stars/stars.png) no-repeat;
+   background-position: -(@x*@spriteGrid) -(@y*@spriteGrid);
+}
 
 body {
 	margin: 0;
 	padding: 0;
+}
+
+img {
+	border: none;
 }
 
 #wrapper {
@@ -85,7 +96,7 @@ body {
 }
 
 .play-txt {
-	font-size: 24px;
+	font-size: 14px;
 	position: absolute;
 	
 	top: 30px;
@@ -93,7 +104,7 @@ body {
 	width: 200px;
 	//line-height: 100px;
 	color: #fff;
-	font-family: "ff-din-web";
+	font-family: @din-font;
 	font-style: normal;
 	font-weight: 900;
 }
@@ -123,28 +134,71 @@ body {
 
 /* stars */
 .star_small {
-	width: 78px;
-	height: 67px;
+	width: @spriteGrid;
+	height: @spriteGrid;
 	position: absolute;
-	background: url(../img/stars/star_small.png) no-repeat;
+	.sprite(0,0);
+	//background: url(../img/stars/star_small.png) no-repeat;
+	
+}
 
+.star_small1 {
+	width: @spriteGrid;
+	height: @spriteGrid;
+	position: absolute;
+	.sprite(1,0);
 }
 
 .star_small2 {
-	width: 38px;
-	height: 38px;
+	width: @spriteGrid;
+	height: @spriteGrid;
 	position: absolute;
-	background: url(../img/stars/star_small2.png) no-repeat;
+	.sprite(2,0);
 }
 
 .star_small3 {
-	width: 24px;
-	height: 22px;
+	width: @spriteGrid;
+	height: @spriteGrid;
 	position: absolute;
-	background: url(../img/stars/star_small3.png) no-repeat;
+	.sprite(3,0);
 }
 
 .star_small4 {
+	width: @spriteGrid;
+	height: @spriteGrid;
+	position: absolute;
+	.sprite(4,0);
+}
+
+.star_small5 {
+	width: @spriteGrid;
+	height: @spriteGrid;
+	position: absolute;
+	.sprite(5,0);
+}
+
+.star_small6 {
+	width: @spriteGrid;
+	height: @spriteGrid;
+	position: absolute;
+	.sprite(6,0);
+}
+
+.star_small7 {
+	width: @spriteGrid;
+	height: @spriteGrid;
+	position: absolute;
+	.sprite(0,1);
+}
+
+.star_small8 {
+	width: @spriteGrid;
+	height: @spriteGrid;
+	position: absolute;
+	.sprite(1,1);
+}
+
+.star_cluster {
 	width: 399px;
 	height: 270px;
 	position: absolute;

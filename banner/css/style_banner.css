@@ -1,231 +1,26 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-#wrapper {
-  width: 1024px;
-  margin: 0 auto;
-}
-#backgroundContainer {
-  margin-top: 116px;
-  position: absolute;
-  width: 100%;
-  min-width: 1224px;
-  background: url(../img/banner_bg.jpg) 50% 0 no-repeat;
-  height: 450px;
-  z-index: 1;
-}
-#gfxContainer {
-  position: absolute;
-  width: 940px;
-  height: 450px;
-  margin-left: 42px;
-  z-index: 2;
-}
-#bannerContainer {
-  position: absolute;
-  width: 940px;
-  height: 450px;
-  margin-left: 42px;
-  z-index: 3;
-}
-.menuItem {
-  width: 270px;
-  height: 270px;
-  position: absolute;
-  /*cursor: pointer;*/
-
-  opacity: 0.3;
-  background: url(../img/white_round_bg.png) 0 0 no-repeat;
-}
-/*.stars {
-	background: url(../img/hover_stars.png) 0 0 no-repeat;
-	width: 613px;
-	height: 438px;
-	position: absolute;
-}*/
-.menuItem-over {
-  opacity: 0.3;
-}
-.menuItem-over .img {
-  margin-top: 3px;
-  margin-left: 3px;
-}
-.menuItem-btn {
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  z-index: 1000;
-}
-.play-btn {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: url(../img/play_btn.png) 0 0 no-repeat;
-}
-.play-txt {
-  font-size: 24px;
-  position: absolute;
-  top: 30px;
-  width: 200px;
-  color: #fff;
-  font-family: "ff-din-web";
-  font-style: normal;
-  font-weight: 900;
-}
-.play-txt-left {
-  left: -205px;
-  text-align: right;
-}
-.play-txt-right {
-  left: 110px;
-  text-align: left;
-}
-.play-txt a:visited,
-.play-txt a:active,
-.play-txt a {
-  color: #fff;
-  text-decoration: none;
-}
-.play-txt a:hover {
-  color: #048fd4;
-}
-/* stars */
-.star_small {
-  width: 78px;
-  height: 67px;
-  position: absolute;
-  background: url(../img/stars/star_small.png) no-repeat;
-}
-.star_small2 {
-  width: 38px;
-  height: 38px;
-  position: absolute;
-  background: url(../img/stars/star_small2.png) no-repeat;
-}
-.star_small3 {
-  width: 24px;
-  height: 22px;
-  position: absolute;
-  background: url(../img/stars/star_small3.png) no-repeat;
-}
-.star_small4 {
-  width: 399px;
-  height: 270px;
-  position: absolute;
-  background: url(../img/stars/star_small4.png) no-repeat;
-}
-.starsContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-/*
-.banner-top-left {
-	left: 10px;
-	top: 10px;
-	.play-btn {
-		position: absolute;
-		top: 20px;
-		right: 20px;
-		background: url(../img/play_btn.png) 0 0 no-repeat;
-		width: 100px;
-		height: 100px;
-	}
-	.play-txt {
-		position: absolute;
-		left: 27px;
-		
-		line-height: 100px;
-		color: @light-blue;
-		font-family: "Verdana";	
-	}
-}
-
-.banner-top-right {
-	top: 10px;
-	right: 10px;
-	.play-btn {
-		position: absolute;
-		top: 0;
-		right: -50px;
-		background: url(../img/play_btn.png) 0 0 no-repeat;
-		width: 100px;
-		height: 100px;
-	}
-	.play-txt {
-		position: absolute;
-		right: -90px;
-		top: -5px;
-		
-		line-height: 100px;
-		color: #FFF;
-		font-family: "Verdana";	
-	}
-}
-
-.banner-bottom-left {
-	bottom: 10px;
-	left: 20px;
-	.play-btn {
-		position: absolute;
-		top: 20px;
-		right: 20px;
-		background: url(../img/play_btn.png) 0 0 no-repeat;
-		width: 100px;
-		height: 100px;
-	}
-	.play-txt {
-		position: absolute;
-		left: 27px;
-		
-		line-height: 100px;
-		color: @light-blue;
-		font-family: "Verdana";	
-	}
-}
-
-.banner-bottom-right {
-	bottom: -30px;
-	right: -40px;
-	.play-btn {
-		position: absolute;
-		top: 100px;
-		left: 200px;
-		background: url(../img/play_btn.png) 0 0 no-repeat;
-		width: 100px;
-		height: 100px;
-	}
-	.play-txt {
-		position: absolute;
-		left: 300px;
-		top: 100px;
-		
-		line-height: 100px;
-		color: @light-blue;
-		font-family: "Verdana";	
-	}
-}
-
-.banner-top-center {
-	top: 30px;
-	left: 450px;
-	.play-btn {
-		position: absolute;
-		top: 100px;
-		left: 200px;
-		background: url(../img/play_btn.png) 0 0 no-repeat;
-		width: 100px;
-		height: 100px;
-	}
-	.play-txt {
-		position: absolute;
-		left: 300px;
-		top: 100px;
-		
-		line-height: 100px;
-		color: @light-blue;
-		font-family: "Verdana";	
-	}
-}
-*/
+body{margin:0;padding:0;}
+img{border:none;}
+#wrapper{width:1024px;margin:0 auto;}
+#backgroundContainer{margin-top:116px;position:absolute;width:100%;min-width:1224px;background:url(../img/banner_bg.jpg) 50% 0 no-repeat;height:450px;z-index:1;}
+#gfxContainer{position:absolute;width:940px;height:450px;margin-left:42px;z-index:2;}
+#bannerContainer{position:absolute;width:940px;height:450px;margin-left:42px;z-index:3;}
+.menuItem{width:270px;height:270px;position:absolute;opacity:0.3;background:url(../img/white_round_bg.png) 0 0 no-repeat;}
+.menuItem-over{opacity:0.3;}.menuItem-over .img{margin-top:3px;margin-left:3px;}
+.menuItem-btn{position:absolute;width:200px;height:100px;z-index:1000;}
+.play-btn{position:absolute;width:100px;height:100px;background:url(../img/play_btn.png) 0 0 no-repeat;}
+.play-txt{font-size:14px;position:absolute;top:30px;width:200px;color:#fff;font-family:"ff-din-web",sans-serif;font-style:normal;font-weight:900;}
+.play-txt-left{left:-205px;text-align:right;}
+.play-txt-right{left:110px;text-align:left;}
+.play-txt a:visited,.play-txt a:active,.play-txt a{color:#fff;text-decoration:none;}
+.play-txt a:hover{color:#048fd4;}
+.star_small{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:0px 0px;}
+.star_small1{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:-50px 0px;}
+.star_small2{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:-100px 0px;}
+.star_small3{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:-150px 0px;}
+.star_small4{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:-200px 0px;}
+.star_small5{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:-250px 0px;}
+.star_small6{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:-300px 0px;}
+.star_small7{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:0px -50px;}
+.star_small8{width:50px;height:50px;position:absolute;background:url(../img/stars/stars.png) no-repeat;background-position:-50px -50px;}
+.star_cluster{width:399px;height:270px;position:absolute;background:url(../img/stars/star_small4.png) no-repeat;}
+.starsContainer{position:absolute;top:0;left:0;}

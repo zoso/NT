@@ -5,49 +5,79 @@
         console.log(".......");
     }
 
-    var classArr = ["star_small", "star_small2", "star_small3"];
+    var classArr = ["star_small", "star_small1", "star_small2", "star_small3", "star_small4", "star_small5", "star_small6", "star_small7", "star_small8"];
     
     function getClass() {
         var r = randomNr(0,classArr.length-1);
-        console.log("RRR "+r);
         return classArr[r];
     } 
 
     var starArr = [];
-    function addStars(el) {
-        var ant = randomNr(1, 8);
+    function addStars(el, x, y) {
+        var ant = randomNr(10, 50);
         starArr = [];
+        var startLeft = x - 50;//263/2;
+        var startTop = y - 50; //50 = size of sprite
         var str = '<div class="starsContainer">';
         for (var i = 0; i < ant; i++) {
-            var l = randomNr(-20, 270);
-            var t = randomNr(-20, 270);
+            var l = randomNr(-10, 200);
+            var t = randomNr(-10, 200);
             var c = getClass();
             starArr.push({left: l, top: t, star: c});
             //str += '<div class="'+getClass()+'" style="left: '+l+'px; top: '+l+'px;">&nbsp;</div>';
-            str += '<div class="'+c+'">&nbsp;</div>';
+            str += '<div class="'+c+'" style="left: '+startLeft+'px; top: '+startTop+'px;">&nbsp;</div>';
         }
-        str += '<div class="star_small4" style="left: -150px; top: 50px;"></div>';
+        str += '<div class="star_cluster" style="left: -150px; top: 50px;"></div>';
         str += '</div>';
         //console.log("addStars "+ant+" > "+str);
         el.append(str);
-        doSomeAni();
+        doSomeAni(el);
     }
 
-    function doSomeAni() {
-        console.log("doSomeAni -> "+starArr.length);
-        var s = element.find(".starsContainer");
+    function doSomeAni(el) {
+        //console.log("doSomeAni -> "+starArr.length);
+        var s = el.find(".starsContainer");
+        var ant = s.children().length-1;
+        //console.log("cont-> "+s.children().length+ " > "+ant);
         
-        for (var i = 0; i < starArr.length; i++) {
-            var c = starArr[i].star;
-            
-            s.each(function() {
-                console.log("-----> "+c);
-                $(this).find(c).animate({
-                    left: starArr[i].left+"px;",
-                    top: starArr[i].top+"px;"
-                }, 400);//("left", starArr[i].left+"px;");
+        var list = s.children().not('.star_cluster');
+        //console.log("list "+list.length);
+        list.each(function(i, elm) {
+            //console.log(">  "+$(elm)+" > "+i);
+            $(elm).animate({
+                left: starArr[i].left+"px",
+                top: starArr[i].top+"px"
+            }, randomNr(100, 2000))
+        })
+
+
+
+        /*for (var i = 0; i < starArr.length; i++) {
+            // s.each(function() {
+                var c = '.'+starArr[i].star;
+                console.log("-----> "+c+ " > "+i);
+                var div = $(this).find(c);//("left", starArr[i].left+"px;");
                 //$(this).find(c).css("top", starArr[i].top+"px;")
-            });
+                div.animate({
+                    left: starArr[i].left+"px",
+                    top: starArr[i].top+"px"
+                }, 100);
+            // });
+        }*/
+
+        
+
+
+        /*
+        animate({
+                left: starArr[i].left+"px;",
+                top: starArr[i].top+"px;"
+            }, 400);
+
+        */
+
+        for (var i = 0; i < starArr.length; i++) {
+            var c = '.'+starArr[i].star;
         }
     }
 
@@ -72,14 +102,16 @@
         defaultSettings = $.extend({}, defaultSettings, settings || {});
         element = this;
         element.hover(
-            function() {
-                //console.log("over ");
+            function(e) {
+                var parentOffset = $(this).parent().offset();
                 //render();
-                addStars($(this));    
+                var x = Math.round(e.pageX-parentOffset.left);
+                var y = Math.round(e.pageY-parentOffset.top);
+                addStars($(this), x, y);    
             }, 
-            function() {
+            function(e) {
                 //console.log("out");
-                //removeStars($(this));
+                removeStars($(this));
             }
         );
     }
